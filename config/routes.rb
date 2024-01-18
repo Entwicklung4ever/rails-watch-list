@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'lists/index'
+  get 'lists/show'
+  get 'lists/new'
+  get 'lists/create'
   resources :lists, only: [:index, :show, :new, :create] do
     resources :movies, only: [:index, :show, :new, :create, :destroy,]
       resources :bookmarks, only: [:new, :create, :destroy]
